@@ -12,6 +12,10 @@ const Artigo = new mongoose.Schema({
     NASC: {
         type: String,
         required: true
+    },
+    sala: {
+        type: String,
+        required: true
     }
 }, {
     timestamps: true,

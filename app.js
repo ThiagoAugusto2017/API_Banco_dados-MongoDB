@@ -36,15 +36,18 @@ app.get("/busca", (req, res) => {
 
 
 //*Busca com filtro
-app.get("/artigo/:id", (req, res) => {
+app.get(encodeURI("/artigo/:id%26:id2"), (req, res) => {
 
     Artigo.findOne({ //me retorna o primeiro que achar
 
-        NOME: req.params.id
+        NOME: req.params.id,
+        EMPRESA: req.params.id2
     }, {
-        NASC: 0, //posso filtra oque vou receber da chamada api
-        EMPRESA: 0,
-        _id: 0
+        // NASC: 1, //posso filtra oque vou receber da chamada api
+        // EMPRESA: 0,
+        // _id: 0
+
+        //! melhorar filtro
 
     }).then((json_retorno) => { // consição de pesquisa
         res.json(json_retorno); // retorno dos dados
