@@ -13,7 +13,7 @@ const Artigo = new mongoose.Schema({
         type: String,
         required: true
     },
-    sala: {
+    SALA: {
         type: String,
         required: true
     }
